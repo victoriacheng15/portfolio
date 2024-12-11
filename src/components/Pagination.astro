@@ -1,0 +1,28 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  baseUrl: string;
+}
+
+const { currentPage, totalPages, baseUrl } = Astro.props;
+---
+
+<nav aria-label="page navigation" class="flex justify-center gap-4">
+  {currentPage > 1 && (
+    <a
+      href={`${baseUrl}${currentPage - 1}`}
+      class="px-4 py-2 text-primary-50 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+    >
+      Previous
+    </a>
+  )}
+  {currentPage < totalPages && (
+    <a
+      href={`${baseUrl}${currentPage + 1}`}
+      class="px-4 py-2 text-primary-50 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+    >
+      Next
+    </a>
+  )}
+</nav>

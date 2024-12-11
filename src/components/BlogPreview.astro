@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import PostDate from './PostDate.astro';
+import PostTags from './PostTags.astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, date, tags, image } = post.data;
+
+// Ensure image dimensions are available to prevent CLS
+const imageWidth = 800; // Set appropriate default width
+const imageHeight = 400; // Set appropriate default height
+---
+
+<article class="p-6 spaace-y-4 border border-secondary-500 text-primary-100 rounded-md transition-all duration-200">
+  {image && (
+    <a href={`/blog/${post.id}`} class="block mb-4">
+      <Image
+        src={image}
+        alt={title}
+        width={imageWidth}
+        height={imageHeight}
+        decoding='async'
+        loading='eager'
+        class="w-full h-48 object-cover rounded-lg"
+      />
+    </a>
+  )}
+  <header class="mb-6 flex flex-col gap-6">
+      <PostDate date={date} />
+      <h2 class="text-xl font-bold">
+        <a href={`/blog/${post.id}`} class="text-secondary-200 hover:text-secondary-100">
+          {title}
+        </a>
+      </h2>
+  </header>
+  {tags && <PostTags tags={tags} />}
+</article>

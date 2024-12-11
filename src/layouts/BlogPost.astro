@@ -1,0 +1,35 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PostDate from '../components/PostDate.astro';
+import PostTags from '../components/PostTags.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, date, tags, image } = post.data;
+---
+
+<BaseLayout title={title}>
+  <article class="prose prose-xl mx-auto">
+    {image && (
+      <img
+        src={image}
+        alt={title}
+        class="w-full h-64 object-cover rounded-lg mb-8"
+      />
+    )}
+    <header class="mb-8">
+      <h1 class="text-4xl font-bold mb-2">{title}</h1>
+      <div class="mb-4">
+        <PostDate date={date} />
+      </div>
+      {tags && <PostTags tags={tags} />}
+    </header>
+    <div class="prose-headings:font-bold prose-a:text-primary-50 hover:prose-a:text-primary-100">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

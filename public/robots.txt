@@ -1,0 +1,9 @@
+
+User-agent: *
+Allow: /
+Allow: /blog/
+Allow: /tags/
+Allow: /archives/
+
+# Sitemap
+Sitemap: https://larry-blog.pages.dev/sitemap.xml

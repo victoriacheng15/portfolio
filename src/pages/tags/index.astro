@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { getAllTags, getPostsByTag } from '../../utils/posts';
+
+const posts = await getCollection('blog');
+const tags = getAllTags(posts);
+const tagCounts = tags.map(tag => ({
+  name: tag,
+  count: getPostsByTag(posts, tag).length
+})).sort((a, b) => b.count - a.count);
+---
+
+<BaseLayout title="Tags">
+  <h1 class="text-4xl font-bold mb-8 text-secondary-100">Tags</h1>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {tagCounts.map(({ name, count }) => (
+      <a
+        href={`/tags/${name}`}
+        class="p-4 bg-secondary-950 text-primary-50 rounded-md transition-colors"
+      >
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-medium">#{name}</span>
+          <span class="text-sm">{count} posts</span>
+        </div>
+      </a>
+    ))}
+  </div>
+</BaseLayout>
