@@ -11,8 +11,8 @@ const { currentPage, totalPages, baseUrl } = Astro.props;
 <nav aria-label="page navigation" class="flex justify-center gap-4">
   {currentPage > 1 && (
     <a
-      href={`${baseUrl}${currentPage - 1}`}
-      class="px-4 py-2 text-primary-50 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+      href={`${baseUrl}${currentPage - 1 !== 1 ? currentPage - 1 : ""}`}
+      class="px-4 py-2 text-primary-950 bg-secondary-200 rounded-md my-8"
     >
       Previous
     </a>
@@ -20,7 +20,7 @@ const { currentPage, totalPages, baseUrl } = Astro.props;
   {currentPage < totalPages && (
     <a
       href={`${baseUrl}${currentPage + 1}`}
-      class="px-4 py-2 text-primary-50 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+      class="px-4 py-2 text-primary-950 bg-secondary-200 rounded-md my-8"
     >
       Next
     </a>
