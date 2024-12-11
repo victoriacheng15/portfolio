@@ -24,7 +24,7 @@ const sortedPosts = sortPostsByDate(posts);
 
 <BaseLayout title={`Posts tagged with #${tag}`}>
   <h1 class="text-4xl font-bold mb-8 text-secondary-100">Posts tagged with #{tag}</h1>
-  <section>
+  <section class="grid gap-10">
     {sortedPosts.map((post) => <BlogPreview post={post} />)}
   </section>
 </BaseLayout>
