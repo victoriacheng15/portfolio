@@ -19,29 +19,70 @@ const postsByYear = sortedPosts.reduce((acc, post) => {
 }, {} as Record<number, typeof sortedPosts>);
 
 const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
+const currentYear = new Date().getFullYear();
 ---
 
 <BaseLayout title="Archive">
   <h1 class="text-4xl font-bold mb-8 text-secondary-100">Archive</h1>
   
-  {years.map(year => (
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-4 text-primary-100">{year}</h2>
-      <ul class="space-y-4">
-        {postsByYear[year].map(post => (
-          <li class="flex items-baseline gap-4">
-            <span class="text-sm whitespace-nowrap">
-              <PostDate date={post.data.date} />
-            </span>
-            <a 
-              href={`/blog/${post.id}`}
-              class="text-primary-50 hover:text-secondary-100"
-            >
-              {post.data.title}
-            </a>
-          </li>
-        ))}
+  {years.map(year => 
+  Number(year) === currentYear ? (
+    <details open class="mb-4">
+      <summary class="text-xl text-secondary-100 mb-2">{year}</summary>
+        <ul class="space-y-4">
+          {postsByYear[year].map(post => (
+            <li class="flex items-baseline gap-4">
+              <span class="whitespace-nowrap">
+                <PostDate date={post.data.date} />
+              </span>
+              <a 
+                href={`/blog/${post.id}`}
+                class="text-primary-50 hover:text-secondary-100"
+              >
+                {post.data.title}
+              </a>
+            </li>
+        ))} 
       </ul>
-    </section>
-  ))}
+    </details>
+  ) : (
+  <details  class="mb-4">
+      <summary class="text-secondary-100 text-xl mb-2">{year}</summary>
+        <ul class="space-y-4">
+          {postsByYear[year].map(post => (
+            <li class="flex items-baseline gap-4">
+              <span class="whitespace-nowrap">
+                <PostDate date={post.data.date} />
+              </span>
+              <a 
+                href={`/blog/${post.id}`}
+                class="text-primary-50 hover:text-secondary-100"
+              >
+                {post.data.title}
+              </a>
+            </li>
+        ))} 
+      </ul>
+    </details>
+  )
+  )}
 </BaseLayout>
+
+<!-- <section class="mb-12">
+  <h2 class="text-2xl font-bold mb-4 text-primary-100">{year}</h2>
+  <ul class="space-y-4">
+    {postsByYear[year].map(post => (
+      <li class="flex items-baseline gap-4">
+        <span class="text-sm whitespace-nowrap">
+          <PostDate date={post.data.date} />
+        </span>
+        <a 
+          href={`/blog/${post.id}`}
+          class="text-primary-50 hover:text-secondary-100"
+        >
+          {post.data.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+</section> -->
