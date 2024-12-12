@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import { formatSkillNames } from "../utils/skills";
+---
+
+<ul class="flex flex-wrap gap-8 items-center justify-between">
+  {
+    formatSkillNames.map((skill) => (
+      <li class="text-primary-50 p-2 bg-primary-50 rounded-lg">
+        <Image
+          width="60"
+          height="60"
+          class="rounded-lg"
+          src={`/skills/${skill}.svg`}
+          alt={skill}
+        />
+        <span class="sr-only">{skill}</span>
+      </li>
+    ))
+  }
+</ul>
