@@ -10,7 +10,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "biome lint ./src",
-    "format": "biome format ./src --write && prettier -w ./src ./src/**/*.astro"
+    "format": "biome format ./src --write && prettier -w ./src/**/*.astro"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.10",

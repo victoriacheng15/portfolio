@@ -1,20 +1,20 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import BlogPreview from '../../components/BlogPreview.astro';
-import { getCollection } from 'astro:content';
-import { getAllTags, getPostsByTag, sortPostsByDate } from '../../utils/posts';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPreview from "../../components/BlogPreview.astro";
+import { getCollection } from "astro:content";
+import { getAllTags, getPostsByTag, sortPostsByDate } from "../../utils/posts";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  const tags = getAllTags(posts);
+	const posts = await getCollection("blog");
+	const tags = getAllTags(posts);
 
-  return tags.map((tag) => {
-    const filteredPosts = getPostsByTag(posts, tag);
-    return {
-      params: { tag },
-      props: { posts: filteredPosts },
-    };
-  });
+	return tags.map((tag) => {
+		const filteredPosts = getPostsByTag(posts, tag);
+		return {
+			params: { tag },
+			props: { posts: filteredPosts },
+		};
+	});
 }
 
 const { tag } = Astro.params;
