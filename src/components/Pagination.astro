@@ -1,28 +1,32 @@
 ---
 interface Props {
-  currentPage: number;
-  totalPages: number;
-  baseUrl: string;
+	currentPage: number;
+	totalPages: number;
+	baseUrl: string;
 }
 
 const { currentPage, totalPages, baseUrl } = Astro.props;
 ---
 
 <nav aria-label="page navigation" class="flex justify-center gap-4">
-  {currentPage > 1 && (
-    <a
-      href={`${baseUrl}${currentPage - 1 !== 1 ? currentPage - 1 : ""}`}
-      class="px-4 py-2 text-primary-950 bg-secondary-200 rounded-md my-8"
-    >
-      Previous
-    </a>
-  )}
-  {currentPage < totalPages && (
-    <a
-      href={`${baseUrl}${currentPage + 1}`}
-      class="px-4 py-2 text-primary-950 bg-secondary-200 rounded-md my-8"
-    >
-      Next
-    </a>
-  )}
+	{
+		currentPage > 1 && (
+			<a
+				href={`${baseUrl}${currentPage - 1 !== 1 ? currentPage - 1 : ""}`}
+				class="my-8 rounded-md bg-secondary-200 px-4 py-2 text-primary-950"
+			>
+				Previous
+			</a>
+		)
+	}
+	{
+		currentPage < totalPages && (
+			<a
+				href={`${baseUrl}${currentPage + 1}`}
+				class="my-8 rounded-md bg-secondary-200 px-4 py-2 text-primary-950"
+			>
+				Next
+			</a>
+		)
+	}
 </nav>

@@ -1,14 +1,16 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-import { getAllTags, getPostsByTag } from '../../utils/posts';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { getAllTags, getPostsByTag } from "../../utils/posts";
 
-const posts = await getCollection('blog');
+const posts = await getCollection("blog");
 const tags = getAllTags(posts);
-const tagCounts = tags.map(tag => ({
-  name: tag,
-  count: getPostsByTag(posts, tag).length
-})).sort((a, b) => b.count - a.count);
+const tagCounts = tags
+	.map((tag) => ({
+		name: tag,
+		count: getPostsByTag(posts, tag).length,
+	}))
+	.sort((a, b) => b.count - a.count);
 ---
 
 <BaseLayout title="Tags">
