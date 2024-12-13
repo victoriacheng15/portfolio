@@ -1,4 +1,5 @@
 import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import { isPublished } from "./date";
 
 export interface PostFilter {
@@ -7,24 +8,23 @@ export interface PostFilter {
 	excludeTags?: string[];
 }
 
-export function sortPostsByDate(
-	posts: CollectionEntry<"blog">[],
-): CollectionEntry<"blog">[] {
+type Blog = CollectionEntry<"blog">;
+
+export async function getAllPost() {
+	return await getCollection("blog");
+}
+
+export function sortPostsByDate(posts: Blog[]): Blog[] {
 	return posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }
 
-export function filterPublishedPosts(
-	posts: CollectionEntry<"blog">[],
-): CollectionEntry<"blog">[] {
+export function filterPublishedPosts(posts: Blog[]): Blog[] {
 	return posts.filter(
 		(post) => !post.data.draft && isPublished(post.data.date),
 	);
 }
 
-export function filterPosts(
-	posts: CollectionEntry<"blog">[],
-	filter: PostFilter = {},
-): CollectionEntry<"blog">[] {
+export function filterPosts(posts: Blog[], filter: PostFilter = {}): Blog[] {
 	let filteredPosts = filterPublishedPosts(posts);
 
 	// Filter by tags
@@ -53,10 +53,7 @@ export function filterPosts(
 	return filteredPosts;
 }
 
-export function getPostsByTag(
-	posts: CollectionEntry<"blog">[],
-	tag: string,
-): CollectionEntry<"blog">[] {
+export function getPostsByTag(posts: Blog[], tag: string): Blog[] {
 	return posts.filter(
 		(post) =>
 			post.data.tags?.includes(tag) &&
@@ -65,9 +62,20 @@ export function getPostsByTag(
 	);
 }
 
-export function getAllTags(posts: CollectionEntry<"blog">[]): string[] {
+export function getAllTags(posts: Blog[]): string[] {
 	const publishedPosts = filterPublishedPosts(posts);
 	return [
 		...new Set(publishedPosts.flatMap((post) => post.data.tags || [])),
 	].sort();
+}
+
+export async function getAllSortedPosts() {
+	const posts = await getAllPost();
+	const publishedPosts = filterPublishedPosts(posts);
+	return sortPostsByDate(publishedPosts);
+}
+
+export async function getAllTheTags() {
+	const posts = await getAllPost();
+	return getAllTags(posts);
 }

@@ -1,3 +1,5 @@
+export const currentYear = new Date().getFullYear();
+
 export function formatDate(date: Date): string {
 	return date.toLocaleDateString("en-US", {
 		year: "numeric",

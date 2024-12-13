@@ -1,14 +1,11 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import BlogPreview from "../../components/BlogPreview.astro";
-import Pagination from "../../components/Pagination.astro";
-import { getCollection } from "astro:content";
-import { filterPublishedPosts, sortPostsByDate } from "../../utils/posts";
+import BaseLayout from "@/layouts/BaseLayout";
+import BlogPreview from "@/components/BlogPreview";
+import Pagination from "@/components/Pagination";
+import { getAllSortedPosts } from "@/utils";
 
 export async function getStaticPaths({ paginate }) {
-	const posts = await getCollection("blog");
-	const publishedPosts = filterPublishedPosts(posts);
-	const sortedPosts = sortPostsByDate(publishedPosts);
+	const sortedPosts = await getAllSortedPosts();
 
 	return paginate(sortedPosts, { pageSize: 10 });
 }

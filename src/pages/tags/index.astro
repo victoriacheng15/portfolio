@@ -1,9 +1,8 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
-import { getAllTags, getPostsByTag } from "../../utils/posts";
+import BaseLayout from "@/layouts/BaseLayout";
+import { getAllPost, getAllTags, getPostsByTag } from "@/utils";
 
-const posts = await getCollection("blog");
+const posts = await getAllPost();
 const tags = getAllTags(posts);
 const tagCounts = tags
 	.map((tag) => ({

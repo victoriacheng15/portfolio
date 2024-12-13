@@ -1,14 +1,10 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
-import { filterPublishedPosts, sortPostsByDate } from "../utils/posts";
-import PostDate from "../components/PostDate.astro";
+import BaseLayout from "@/layouts/BaseLayout";
+import PostDate from "@/components/PostDate";
+import { currentYear, getAllSortedPosts } from "@/utils";
 
-const posts = await getCollection("blog");
-const publishedPosts = filterPublishedPosts(posts);
-const sortedPosts = sortPostsByDate(publishedPosts);
+const sortedPosts = await getAllSortedPosts();
 
-// Group posts by year
 const postsByYear = sortedPosts.reduce(
 	(acc, post) => {
 		const year = post.data.date.getFullYear();
@@ -22,7 +18,6 @@ const postsByYear = sortedPosts.reduce(
 );
 
 const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
-const currentYear = new Date().getFullYear();
 ---
 
 <BaseLayout title="Archive">
