@@ -8,15 +8,13 @@ export interface PostFilter {
 	excludeTags?: string[];
 }
 
-type Blog = CollectionEntry<"blog">
+type Blog = CollectionEntry<"blog">;
 
 export async function getAllPost() {
 	return await getCollection("blog");
 }
 
-export function sortPostsByDate(
-	posts: Blog[],
-): Blog[] {
+export function sortPostsByDate(posts: Blog[]): Blog[] {
 	return posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }
 
@@ -26,10 +24,7 @@ export function filterPublishedPosts(posts: Blog[]): Blog[] {
 	);
 }
 
-export function filterPosts(
-	posts: Blog[],
-	filter: PostFilter = {},
-): Blog[] {
+export function filterPosts(posts: Blog[], filter: PostFilter = {}): Blog[] {
 	let filteredPosts = filterPublishedPosts(posts);
 
 	// Filter by tags
@@ -58,10 +53,7 @@ export function filterPosts(
 	return filteredPosts;
 }
 
-export function getPostsByTag(
-	posts: Blog[],
-	tag: string,
-): Blog[] {
+export function getPostsByTag(posts: Blog[], tag: string): Blog[] {
 	return posts.filter(
 		(post) =>
 			post.data.tags?.includes(tag) &&
@@ -76,7 +68,6 @@ export function getAllTags(posts: Blog[]): string[] {
 		...new Set(publishedPosts.flatMap((post) => post.data.tags || [])),
 	].sort();
 }
-
 
 export async function getAllSortedPosts() {
 	const posts = await getAllPost();

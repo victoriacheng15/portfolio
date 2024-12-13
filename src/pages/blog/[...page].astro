@@ -5,7 +5,7 @@ import Pagination from "@/components/Pagination";
 import { getAllSortedPosts } from "@/utils";
 
 export async function getStaticPaths({ paginate }) {
-  const sortedPosts = await getAllSortedPosts();
+	const sortedPosts = await getAllSortedPosts();
 
 	return paginate(sortedPosts, { pageSize: 10 });
 }
