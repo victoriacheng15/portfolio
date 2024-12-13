@@ -1,10 +1,12 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Skills from "../components/Skills.astro";
-import { siteConfig } from "../config";
+import BaseLayout from "@/layouts/BaseLayout";
+import Skills from "@/components/Skills";
+import { siteConfig } from "@/config";
+
+const { title } = siteConfig
 ---
 
-<BaseLayout title={siteConfig.title}>
+<BaseLayout title={title}>
 	<section>
 		<h2 class="my-6 text-2xl text-secondary-300">Skills</h2>
 		<Skills />

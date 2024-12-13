@@ -1,12 +1,10 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import BlogPreview from "../../components/BlogPreview.astro";
-import { getCollection } from "astro:content";
-import { getAllTags, getPostsByTag, sortPostsByDate } from "../../utils/posts";
+import BaseLayout from "@/layouts/BaseLayout";
+import BlogPreview from "@/components/BlogPreview";
+import { getPostsByTag, sortPostsByDate, getAllTheTags } from "@/utils";
 
 export async function getStaticPaths() {
-	const posts = await getCollection("blog");
-	const tags = getAllTags(posts);
+	const tags = await getAllTheTags();
 
 	return tags.map((tag) => {
 		const filteredPosts = getPostsByTag(posts, tag);

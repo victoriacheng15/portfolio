@@ -1,8 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 import PostDate from "./PostDate.astro";
 import PostTags from "./PostTags.astro";
-import { Image } from "astro:assets";
 
 interface Props {
 	post: CollectionEntry<"blog">;

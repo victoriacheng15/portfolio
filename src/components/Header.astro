@@ -1,25 +1,20 @@
 ---
-import { siteConfig } from "../config";
+import { siteConfig } from "@/config";
+import { navHeader } from "@/utils";
 
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
-
-const navItems = [
-	{ href: "/", text: "Home" },
-	{ href: "/blog", text: "Blog" },
-	{ href: "/tags", text: "Tags" },
-	{ href: "/archive", text: "Archive" },
-];
+const { title: siteTitle, slogan, description } = siteConfig;
 ---
 
 <header class="my-20 space-y-20 text-primary-50">
 	<nav class="flex flex-wrap items-center justify-center gap-10">
 		<ul class="flex gap-4 md:gap-6">
 			{
-				navItems.map(({ href, text }) => (
+				navHeader.map(({ href, text }) => (
 					<li>
 						<a href={href} class="rounded-lg px-4 py-2 text-lg hover:bg-secondary-950">
 							{text}
@@ -30,13 +25,13 @@ const navItems = [
 		</ul>
 	</nav>
 	{
-		title === siteConfig.title && (
+		title === siteTitle && (
 			<>
 				<div class="space-y-6">
 					<h1 class="text-3xl font-extrabold tracking-wide text-secondary-400">Victoria Cheng</h1>
 					<h2 class="text-xl text-secondary-300">Software Development Student at SAIT</h2>
-					<h3 class="text-xl text-secondary-200">{siteConfig.slogan}</h3>
-					<p class="text-lg leading-8 text-primary-100">{siteConfig.description}</p>
+					<h3 class="text-xl text-secondary-200">{slogan}</h3>
+					<p class="text-lg leading-8 text-primary-100">{description}</p>
 				</div>
 			</>
 		)
