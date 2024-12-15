@@ -2,11 +2,11 @@
 import { currentYear, navItems } from "@/utils";
 ---
 
-<footer class="py-6 space-y-6 text-center text-primary-50">
+<footer class="space-y-6 py-6 text-center text-primary-50">
 	<nav>
-		<ul class="flex flex-wrap justify-center items-center gap-4 md:gap-6 lg:gap-8">
+		<ul class="flex flex-wrap items-center justify-center gap-4 md:gap-6 lg:gap-8">
 			{
-				navItems.map(({href, text}) => (
+				navItems.map(({ href, text }) => (
 					<li class="rounded-lg p-2 text-lg hover:bg-secondary-950">
 						<a href={href}>{text}</a>
 					</li>

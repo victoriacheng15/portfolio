@@ -9,7 +9,7 @@ import {
 } from "./posts";
 import { formatSkillNames } from "./skills";
 import { navItems, navHeader } from "./navItem";
-import { PROJECTS } from "./projects"
+import { PROJECTS } from "./projects";
 
 export {
 	formatDate,
@@ -23,5 +23,5 @@ export {
 	formatSkillNames,
 	navItems,
 	navHeader,
-	PROJECTS
+	PROJECTS,
 };

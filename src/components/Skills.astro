@@ -5,11 +5,17 @@ import { formatSkillNames } from "@/utils";
 const SIZE = 60;
 ---
 
-<ul class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 justify-items-center gap-8">
+<ul class="grid grid-cols-3 justify-items-center gap-8 sm:grid-cols-4 md:grid-cols-6">
 	{
 		formatSkillNames.map((skill) => (
 			<li class="rounded-lg bg-primary-200 p-2">
-				<Image width={SIZE} height={SIZE} class="rounded-lg" src={`/skills/${skill}.svg`} alt={skill} />
+				<Image
+					width={SIZE}
+					height={SIZE}
+					class="rounded-lg"
+					src={`/skills/${skill}.svg`}
+					alt={skill}
+				/>
 				<span class="sr-only">{skill}</span>
 			</li>
 		))
