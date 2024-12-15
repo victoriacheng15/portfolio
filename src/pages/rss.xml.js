@@ -1,11 +1,11 @@
 import rss from "@astrojs/rss";
-import { siteConfig } from "../config";
-import { getCollection } from "astro:content";
+import { siteConfig } from "@/config";
+import { getAllPost } from "@/utils";
 
 export async function GET(context) {
 	const collection = "blog";
 	// id,body,collection,data,render
-	const blog = await getCollection(collection);
+	const blog = await getAllPost();
 	return rss({
 		// `<title>` field in output xml
 		title: siteConfig.title,

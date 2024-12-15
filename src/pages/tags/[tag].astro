@@ -1,7 +1,12 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout";
 import BlogPreview from "@/components/BlogPreview";
-import { getAllPost, getAllTags, getPostsByTag, sortPostsByDate } from "@/utils";
+import {
+	getAllPost,
+	getAllTags,
+	getPostsByTag,
+	sortPostsByDate,
+} from "@/utils";
 
 export async function getStaticPaths() {
 	const posts = await getAllPost();

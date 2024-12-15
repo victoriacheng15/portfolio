@@ -23,7 +23,7 @@ const { title, description = "A minimal blog focused on excellent reading experi
 		<ClientRouter />
 	</head>
 	<body class="min-h-screen bg-primary-950">
-		<div class="mx-auto max-w-4xl">
+		<div class="mx-auto max-w-3xl px-10">
 			<Header title={title} transition:persist />
 			<main class="my-10" transition:animate={slide({ duration: ".3s" })}>
 				<slot />

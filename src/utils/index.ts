@@ -1,8 +1,7 @@
-import { formatDate, isPublished, currentYear } from "./date";
+import { formatDate, currentYear } from "./date";
 import {
 	getAllPost,
 	sortPostsByDate,
-	filterPublishedPosts,
 	getPostsByTag,
 	getAllTags,
 	getAllSortedPosts,
@@ -10,14 +9,13 @@ import {
 } from "./posts";
 import { formatSkillNames } from "./skills";
 import { navItems, navHeader } from "./navItem";
+import { PROJECTS } from "./projects";
 
 export {
 	formatDate,
-	isPublished,
 	currentYear,
 	getAllPost,
 	sortPostsByDate,
-	filterPublishedPosts,
 	getPostsByTag,
 	getAllTags,
 	getAllSortedPosts,
@@ -25,4 +23,5 @@ export {
 	formatSkillNames,
 	navItems,
 	navHeader,
+	PROJECTS,
 };
