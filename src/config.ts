@@ -10,7 +10,7 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-	site: "https://example.com/",
+	site: "https://victoriacheng15.vercel.app/",
 	title: "Victoria",
 	slogan: "Navigating the endless world of technology.",
 	description:
