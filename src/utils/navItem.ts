@@ -1,6 +1,5 @@
 export const navItems = [
 	{ href: "/", text: "Home", position: "top" },
-	{ href: "/projects", text: "Projects", position: "top" },
 	{ href: "/blog", text: "Blog", position: "top" },
 	{ href: "/tags", text: "Tags", position: "top" },
 	{ href: "/archive", text: "Archive", position: null },
