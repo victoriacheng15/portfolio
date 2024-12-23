@@ -6,4 +6,4 @@ Allow: /tags/
 Allow: /archives/
 
 # Sitemap
-Sitemap: https://larry-blog.pages.dev/sitemap.xml
+Sitemap: https://victoriacheng15.vercel.app/sitemap.xml
