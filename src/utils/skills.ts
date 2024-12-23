@@ -25,5 +25,5 @@ export const SKILLS = [
 ];
 
 export function formatSkillPath(skill: string) {
-	return skill.replace(/\./g, "dot").replace(/\s+/g, "").toLowerCase()
+	return skill.replace(/\./g, "dot").replace(/\s+/g, "").toLowerCase();
 }
