@@ -7,7 +7,7 @@ import {
 	getAllSortedPosts,
 	getAllTheTags,
 } from "./posts";
-import { formatSkillNames } from "./skills";
+import { SKILLS, formatSkillPath } from "./skills";
 import { navItems, navHeader } from "./navItem";
 import { PROJECTS } from "./projects";
 import { SOCIALS, formatSocialName } from "./socialLinks";
@@ -21,7 +21,8 @@ export {
 	getAllTags,
 	getAllSortedPosts,
 	getAllTheTags,
-	formatSkillNames,
+	SKILLS,
+	formatSkillPath,
 	navItems,
 	navHeader,
 	PROJECTS,
