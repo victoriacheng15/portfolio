@@ -10,8 +10,8 @@ const { title } = Astro.props;
 const { title: siteTitle, slogan, description } = siteConfig;
 ---
 
-<header class="my-12 space-y-14 text-primary-50">
-	<nav>
+<header class="py-6 text-primary-50">
+	<nav class="py-6">
 		<ul class="flex flex-wrap items-center justify-center gap-4 md:gap-6 lg:gap-8">
 			{
 				navHeader.map(({ href, text }) => (
@@ -26,14 +26,12 @@ const { title: siteTitle, slogan, description } = siteConfig;
 	</nav>
 	{
 		title === siteTitle && (
-			<>
-				<div class="space-y-6">
-					<h1 class="text-3xl font-extrabold tracking-wide text-secondary-400">Victoria Cheng</h1>
-					<h2 class="text-xl text-secondary-300">Software Development Student at SAIT</h2>
-					<h3 class="text-xl text-secondary-200">{slogan}</h3>
-					<p class="text-lg leading-8 text-primary-100">{description}</p>
-				</div>
-			</>
+			<div class="grid gap-6 py-4">
+				<h1 class="text-3xl font-extrabold tracking-wide text-secondary-400">Victoria Cheng</h1>
+				<h2 class="text-xl text-secondary-300">Software Development Student at SAIT</h2>
+				<h3 class="text-xl text-secondary-200">{slogan}</h3>
+				<p class="text-lg leading-8 text-primary-100">{description}</p>
+			</div>
 		)
 	}
 </header>
