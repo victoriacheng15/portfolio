@@ -1,22 +1,22 @@
 ---
 import { Image } from "astro:assets";
-import { formatSkillNames } from "@/utils";
+import { SKILLS, formatSkillPath } from "@/utils";
 
-const SIZE = 60;
+const SIZE = 50;
 ---
 
 <ul class="grid grid-cols-3 justify-items-center gap-8 sm:grid-cols-4 md:grid-cols-6">
 	{
-		formatSkillNames.map((skill) => (
-			<li class="rounded-lg bg-primary-200 p-2">
+		SKILLS.map((skill) => (
+			<li class="grid place-items-center gap-2">
 				<Image
 					width={SIZE}
 					height={SIZE}
-					class="rounded-lg"
-					src={`/skills/${skill}.svg`}
+					class="rounded-md bg-primary-200 p-1"
+					src={`/skills/${formatSkillPath(skill)}.svg`}
 					alt={skill}
 				/>
-				<span class="sr-only">{skill}</span>
+				<p class="text-center text-xs text-primary-100 md:text-sm">{skill}</p>
 			</li>
 		))
 	}

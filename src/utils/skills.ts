@@ -1,4 +1,4 @@
-const SKILLS = [
+export const SKILLS = [
 	"TypeScript",
 	"JavaScript",
 	"Python",
@@ -24,16 +24,6 @@ const SKILLS = [
 	"Linux",
 ];
 
-function formatForFilePath(skills: string[]): string[] {
-	return skills.reduce((acc: string[], curr: string) => {
-		const formattedString = curr
-			.replace(/\./g, "dot")
-			.replace(/\s+/g, "")
-			.toLowerCase();
-		acc.push(formattedString);
-
-		return acc;
-	}, []);
+export function formatSkillPath(skill: string) {
+	return skill.replace(/\./g, "dot").replace(/\s+/g, "").toLowerCase();
 }
-
-export const formatSkillNames = formatForFilePath(SKILLS);
