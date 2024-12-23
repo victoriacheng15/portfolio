@@ -1,14 +1,19 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout";
 import Skills from "@/components/Skills";
+import Projects from "@/components/projects";
 import { siteConfig } from "@/config";
 
 const { title } = siteConfig;
 ---
 
 <BaseLayout title={title}>
-	<section>
+	<section class="py-6">
 		<h2 class="my-6 text-2xl text-secondary-300">Skills</h2>
 		<Skills />
+	</section>
+	<section class="py-6">
+		<h2 class="my-6 text-2xl text-secondary-300">Projects</h2>
+		<Projects />
 	</section>
 </BaseLayout>
