@@ -25,10 +25,10 @@ export const SOCIALS = [
 	},
 	{
 		name: "rss",
-		href:"/rss.xml"
-	}
+		href: "/rss.xml",
+	},
 ];
 
 export function formatSocialName(name: string) {
-	return name.replace(/\W/g,"").toLowerCase();
+	return name.replace(/\W/g, "").toLowerCase();
 }

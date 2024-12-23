@@ -1,18 +1,21 @@
 ---
-import {Image} from "astro:assets"
-import { SOCIALS, formatSocialName } from "@/utils"
+import { Image } from "astro:assets";
+import { SOCIALS, formatSocialName } from "@/utils";
 
 const SIZE = 35;
 ---
 
 <div class="flex flex-wrap gap-6">
 	{
-		SOCIALS.map(({name, href}) => (
-			<a
-				href={href}
-				aria-label={name}
-			>
-				<Image width={SIZE} height={SIZE} src={`/socials/${formatSocialName(name)}.svg`} class="bg-secondary-300 rounded-md p-1" alt={name} />
+		SOCIALS.map(({ name, href }) => (
+			<a href={href} aria-label={name}>
+				<Image
+					width={SIZE}
+					height={SIZE}
+					src={`/socials/${formatSocialName(name)}.svg`}
+					class="rounded-md bg-secondary-300 p-1"
+					alt={name}
+				/>
 			</a>
 		))
 	}

@@ -10,7 +10,7 @@ import {
 import { formatSkillNames } from "./skills";
 import { navItems, navHeader } from "./navItem";
 import { PROJECTS } from "./projects";
-import {SOCIALS, formatSocialName} from "./socialLinks";
+import { SOCIALS, formatSocialName } from "./socialLinks";
 
 export {
 	formatDate,
@@ -26,5 +26,5 @@ export {
 	navHeader,
 	PROJECTS,
 	SOCIALS,
-	formatSocialName
+	formatSocialName,
 };
