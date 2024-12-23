@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.10",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/tailwind": "^5.1.4",
     "@tailwindcss/typography": "^0.5.10",
     "astro": "^5.0.3",
     "rehype-pretty-code": "^0.14.0",
