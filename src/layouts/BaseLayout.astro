@@ -22,13 +22,11 @@ const { title, description = "A minimal blog focused on excellent reading experi
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<ClientRouter />
 	</head>
-	<body class="min-h-screen bg-primary-950">
-		<div class="mx-auto max-w-3xl px-10">
-			<Header title={title} transition:persist />
-			<main class="my-10" transition:animate={slide({ duration: ".3s" })}>
-				<slot />
-			</main>
-			<Footer transition:persist />
-		</div>
+	<body class="mx-auto flex min-h-screen max-w-3xl flex-col bg-primary-950 px-10">
+		<Header title={title} transition:persist />
+		<main class="mb-auto" transition:animate={slide({ duration: ".3s" })}>
+			<slot />
+		</main>
+		<Footer transition:persist />
 	</body>
 </html>
