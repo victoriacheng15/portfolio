@@ -22,7 +22,7 @@ const { title, description = "A minimal blog focused on excellent reading experi
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<ClientRouter />
 	</head>
-	<body class="mx-auto flex min-h-screen max-w-3xl flex-col bg-primary-950 px-10">
+	<body class="mx-auto flex min-h-screen max-w-3xl flex-col text-primary-50 bg-primary-950 px-10">
 		<Header title={title} transition:persist />
 		<main class="mb-auto" transition:animate={slide({ duration: ".3s" })}>
 			<slot />
