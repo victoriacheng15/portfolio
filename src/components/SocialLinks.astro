@@ -8,12 +8,12 @@ const SIZE = 35;
 <div class="flex flex-wrap gap-6">
 	{
 		SOCIALS.map(({ name, href }) => (
-			<a href={href} aria-label={name}>
+			<a href={href} aria-label={name} class="bg-secondary-200 hover:bg-secondary-400 duration-300 ease-in-out rounded-md">
 				<Image
 					width={SIZE}
 					height={SIZE}
 					src={`/socials/${formatSocialName(name)}.svg`}
-					class="rounded-md bg-secondary-300 p-1"
+					class="rounded-md p-1"
 					alt={name}
 				/>
 			</a>
