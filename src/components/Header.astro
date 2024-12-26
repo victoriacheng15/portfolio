@@ -17,7 +17,10 @@ const { title: siteTitle, slogan, description } = siteConfig;
 			{
 				navHeader.map(({ href, text }) => (
 					<li>
-						<a href={href} class="rounded-lg p-2 text-lg hover:bg-secondary-900 duration-300 ease-in-out">
+						<a
+							href={href}
+							class="rounded-lg p-2 text-lg duration-300 ease-in-out hover:bg-secondary-900"
+						>
 							{text}
 						</a>
 					</li>

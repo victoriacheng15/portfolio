@@ -34,7 +34,10 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 								<span class="whitespace-nowrap">
 									<PostDate date={post.data.date} />
 								</span>
-								<a href={`/blog/${post.id}`} class="hover:text-secondary-200 duration-300 ease-in-out">
+								<a
+									href={`/blog/${post.id}`}
+									class="duration-300 ease-in-out hover:text-secondary-200"
+								>
 									{post.data.title}
 								</a>
 							</li>
@@ -50,7 +53,10 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 								<span class="whitespace-nowrap">
 									<PostDate date={post.data.date} />
 								</span>
-								<a href={`/blog/${post.id}`} class="hover:text-secondary-200 duration-300 ease-in-out">
+								<a
+									href={`/blog/${post.id}`}
+									class="duration-300 ease-in-out hover:text-secondary-200"
+								>
 									{post.data.title}
 								</a>
 							</li>
