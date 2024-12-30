@@ -2,7 +2,7 @@
 title: "Understanding the TCP Three-Way Handshake"
 description: "Explore the TCP 3-way handshake, a crucial step for reliable internet communication. Learn how it ensures accurate data transfer and stable connections."
 date: 2024-11-05
-tags: [system-design]
+tags: [networking]
 ---
 
 ## What is a TCP Three-Way Handshake?
