@@ -2,7 +2,7 @@
 title: "Understanding the Difference Between TCP and UDP"
 description: "Explore TCP vs UDP with a post office analogy. Learn when to choose reliable, ordered TCP or faster, less reliable UDP for different network applications."
 date: 2024-08-06
-tags: [system-design]
+tags: [networking]
 ---
 
 ## Introduction to TCP and UDP

@@ -2,7 +2,7 @@
 title: "Binary, Decimal, Hexadecimal - Practical Conversions Guide"
 description: "Learn how computers understand numbers! Dive into decimal, binary, and hexadecimal. Unlock the secrets of coding!"
 date: 2024-06-18
-tags: [system-design]
+tags: [dsa]
 ---
 
 ## Intro to Numerical Systems in Computer

@@ -2,7 +2,7 @@
 title: "IPv4 vs IPv6: A Quick Guide"
 description: "Explore the key differences between IPv4 and IPv6, focusing on address size, security, and performance, and understand their impact on the internet."
 date: 2024-08-20
-tags: [system-design]
+tags: [networking]
 ---
 
 ## Understanding the Internet Protocol (IP)
