@@ -4,10 +4,10 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/projects";
 import { siteConfig } from "@/config";
 
-const { title } = siteConfig;
+const { title, description } = siteConfig;
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} description={description}>
 	<section class="py-6">
 		<h2 class="my-6 text-2xl text-secondary-300">Skills</h2>
 		<Skills />
