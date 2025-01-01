@@ -2,14 +2,15 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ClientRouter, slide } from "astro:transitions";
+import { siteConfig } from "@/config";
 
 interface Props {
 	title: string;
 	description?: string;
 }
 
-const { title, description = "A minimal blog focused on excellent reading experience" } =
-	Astro.props;
+const { title } =	Astro.props;
+const {description} = siteConfig
 ---
 
 <!doctype html>
