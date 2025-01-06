@@ -89,7 +89,7 @@ The `DELETE` statement is a powerful tool for removing records from a table in S
 
 ## Resources
 
-[PostgreSQL DELETE](https://neon.tech/postgresql/postgresql-tutorial/postgresql-delete
+[PostgreSQL DELETE](https://neon.tech/postgresql/postgresql-tutorial/postgresql-delete)
 
 ## Thank you!
 
