@@ -13,7 +13,7 @@
     "format": "biome format ./src --write && prettier -w ./src/**/*.astro"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.10",
+    "@astrojs/rss": "^4.0.11",
     "@astrojs/tailwind": "^5.1.4",
     "@tailwindcss/typography": "^0.5.10",
     "astro": "^5.1.1",
