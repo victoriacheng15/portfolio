@@ -11,9 +11,8 @@ interface Props {
 const { post } = Astro.props;
 const { title, date, tags, image } = post.data;
 
-// Ensure image dimensions are available to prevent CLS
-const imageWidth = 800; // Set appropriate default width
-const imageHeight = 400; // Set appropriate default height
+const imageWidth = 800;
+const imageHeight = 400;
 ---
 
 <article class="grid gap-6 rounded-md border border-secondary-500 p-6">

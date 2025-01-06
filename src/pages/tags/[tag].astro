@@ -26,7 +26,7 @@ const { posts } = Astro.props;
 const sortedPosts = sortPostsByDate(posts);
 ---
 
-<BaseLayout title={`Posts tagged with #${tag}`}>
+<BaseLayout title={`Posts tagged with #${tag}`} description={`Explore my blog posts tagged with ${tag}.`}>
   <h1 class="text-4xl font-bold my-8 text-secondary-300">Posts tagged with #{tag}</h1>
   <section class="grid gap-10">
     {sortedPosts.map((post) => <BlogPreview post={post} />)}

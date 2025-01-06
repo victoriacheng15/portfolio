@@ -9,10 +9,10 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { title, date, tags, image } = post.data;
+const { title, date, tags, image, description } = post.data;
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} description={description}>
 	<article class="prose prose-xl mx-auto">
 		{image && <img src={image} alt={title} class="mb-8 h-64 w-full rounded-lg object-cover" />}
 		<header class="mb-8">
