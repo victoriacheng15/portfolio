@@ -5,12 +5,13 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "biome lint ./src",
-    "format": "biome format ./src --write && prettier -w ./src/**/*.astro"
+    "format": "biome format ./src --write && prettier -w ./src/**/*.astro",
+    "post": "./scripts/new_post.sh",
+    "publish": "./scripts/publish_post.sh"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.11",
