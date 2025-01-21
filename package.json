@@ -11,7 +11,8 @@
     "lint": "biome lint ./src",
     "format": "biome format ./src --write && prettier -w ./src/**/*.astro",
     "post": "./scripts/new_post.sh",
-    "publish": "./scripts/publish_post.sh"
+    "publish": "./scripts/publish_post.sh",
+    "status": "./scripts/check_pr_status.sh"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.11",
