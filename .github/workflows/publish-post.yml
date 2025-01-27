@@ -43,8 +43,8 @@ jobs:
         run: |
           git add src/content/
           git commit -m "chore: the post is published! 🎉"
-          git pull origin publish-post --rebase
-          git push -u origin HEAD
+          git pull origin publish-post --rebase || true
+          git push -u origin HEAD --force-with-lease
 
       - name: Create PR
         if: steps.changes.outputs.changes_detected == 'true'
