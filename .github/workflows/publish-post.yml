@@ -20,7 +20,7 @@ jobs:
       - name: Generate Unique Branch Name
         id: branch-name
         run: |
-          echo "branch_name=publish-post-$(date +%s)" >> "$GITHUB_OUTPUT"
+          echo "branch_name=publish-post" >> "$GITHUB_OUTPUT"
 
       - name: Create and switch to publish-post branch
         run: git switch -c "${{ steps.branch-name.outputs.branch_name }}"
@@ -42,6 +42,7 @@ jobs:
         run: exit 0
 
       - name: Git Config
+        if: steps.changes.outputs.changes_detected == 'true'
         run: |
           git config --local user.email "${{ github.actor }}@users.noreply.github.com"
           git config --local user.name "${{ github.actor }}"
