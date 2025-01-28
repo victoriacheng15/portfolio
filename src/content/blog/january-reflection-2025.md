@@ -3,7 +3,6 @@ title: "January Reflection 2025"
 description: "Excited to expand my knowledge in OOP3, mobile app dev, Azure, AAA testing, and CI/CD pipelines. Ready to grow skills and embrace new tech trends in 2025!"
 date: 2025-01-28
 tags: [reflection]
-draft: true
 ---
 
 ## Monthly Reflection
