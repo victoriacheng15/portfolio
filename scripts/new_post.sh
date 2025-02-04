@@ -31,7 +31,7 @@ day=${dd:-$(date +%d)}
 date=$year-$month-$day
 
 touch $slug.md
-echo "https://victoriacheng15.vercel.app/posts/$slug"
+echo "https://victoriacheng15.vercel.app/blog/$slug"
 
 
 cat <<EOF > $slug.md
