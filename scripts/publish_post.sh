@@ -2,7 +2,7 @@
 
 cd "src/content/blog" || exit
 
-tomorrow=$(date -d "tomorrow" +%Y-%m-%d)
+tomorrow=$(date -u -d "tomorrow" +%Y-%m-%d)
 
 for file in *.md; do
 
