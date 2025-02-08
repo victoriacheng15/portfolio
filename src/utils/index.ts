@@ -1,6 +1,7 @@
 import { formatDate, currentYear } from "./date";
 import {
 	getAllPost,
+	filterPublishedPosts,
 	sortPostsByDate,
 	getPostsByTag,
 	getAllTags,
@@ -16,6 +17,7 @@ export {
 	formatDate,
 	currentYear,
 	getAllPost,
+	filterPublishedPosts,
 	sortPostsByDate,
 	getPostsByTag,
 	getAllTags,
