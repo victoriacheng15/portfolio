@@ -1,11 +1,12 @@
 import rss from "@astrojs/rss";
 import { siteConfig } from "@/config";
-import { getAllPost } from "@/utils";
+import { getAllPost, filterPublishedPosts } from "@/utils";
 
 export async function GET(context) {
 	const collection = "blog";
 	// id,body,collection,data,render
 	const blog = await getAllPost();
+	const publishedBlog = filterPublishedPosts(blog);
 	return rss({
 		// `<title>` field in output xml
 		title: siteConfig.title,
@@ -16,7 +17,7 @@ export async function GET(context) {
 		site: context.site,
 		// Array of `<item>`s in output xml
 		// See "Generating items" section for examples using content collections and glob imports
-		items: blog.map((post) => ({
+		items: publishedBlog.map((post) => ({
 			title: post.data.title,
 			description: post.data.description,
 			link: `${context.site + collection}/${post.id}`,
