@@ -3,7 +3,6 @@ title: "Learning SQL: CROSS JOIN"
 description: "Learn SQL CROSS JOIN: Combine every row from two tables, create all possible combinations, and understand its use cases for data analysis."
 date: 2025-02-11
 tags: [sql]
-draft: true
 ---
 
 ## What is the CROSS JOIN Clause?
