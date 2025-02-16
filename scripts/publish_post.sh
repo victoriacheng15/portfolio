@@ -4,14 +4,33 @@ cd "src/content/blog" || exit
 
 tomorrow=$(date -u -d "tomorrow" +%Y-%m-%d)
 
-for file in *.md; do
+echo "===================="
+echo "Script started"
+echo -e "====================\n"
 
-  file_date=$(grep '^date:' "$file" | awk '{print $2}' | tr -d '"')
+# Find all files with the draft line
+draft_files=$(grep -l '^draft:' *.md)
 
-  if [[ "$file_date" == "$tomorrow" ]]; then
-    echo "Processing $file..."
+if [[ -z "$draft_files" ]]; then
+  echo -e "No draft files found.\n"
+  exit 0
+else
+  echo -e "Found draft files. Processing...\n"
 
-    sed -i '/^draft:/d' "$file"
-  fi
+  # Processing each draft file
+  for file in $draft_files; do
+    file_date=$(grep '^date:' "$file" | awk '{print $2}' | tr -d '"')
 
-done
+    if [[ "$file_date" == "$tomorrow" ]]; then
+      echo "Processing $file..."
+      sed -i '/^draft:/d' "$file"
+      echo "Publishing $file..."
+    else
+      echo "Not time yet, Skipping $file..."
+    fi
+  done
+fi
+
+echo -e "\n===================="
+echo "Script completed."
+echo "===================="
