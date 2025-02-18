@@ -13,7 +13,7 @@ const { currentPage, totalPages, baseUrl } = Astro.props;
 		currentPage > 1 && (
 			<a
 				href={`${baseUrl}${currentPage - 1 !== 1 ? currentPage - 1 : ""}`}
-				class="my-8 rounded-md bg-secondary-200 px-4 py-2 text-primary-950"
+				class="bg-secondary-200 text-primary-950 my-8 rounded-md px-4 py-2"
 			>
 				Previous
 			</a>
@@ -23,7 +23,7 @@ const { currentPage, totalPages, baseUrl } = Astro.props;
 		currentPage < totalPages && (
 			<a
 				href={`${baseUrl}${currentPage + 1}`}
-				class="my-8 rounded-md bg-secondary-200 px-4 py-2 text-primary-950"
+				class="bg-secondary-200 text-primary-950 my-8 rounded-md px-4 py-2"
 			>
 				Next
 			</a>
