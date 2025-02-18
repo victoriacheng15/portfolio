@@ -3,7 +3,6 @@ title: "Learning SQL: GROUP BY"
 description: "Learn how to use the SQL GROUP BY clause to group and summarize data. Perfect for aggregating and analyzing datasets with clear examples and explanations."
 date: 2025-02-18
 tags: [sql]
-draft: true
 ---
 
 ## What is GROUP BY Clause?
