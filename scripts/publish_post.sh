@@ -2,8 +2,9 @@
 
 cd "src/content/blog" || exit
 
-tomorrow=$(date -u -d "tomorrow" +%Y-%m-%d)
+today=$(date -u +%Y-%m-%d)
 
+echo $(date -u +"%Y-%m-%d %T %Z")
 echo "===================="
 echo "Script started"
 echo -e "====================\n"
@@ -21,12 +22,12 @@ else
   for file in $draft_files; do
     file_date=$(grep '^date:' "$file" | awk '{print $2}' | tr -d '"')
 
-    if [[ "$file_date" == "$tomorrow" ]]; then
+    if [[ "$file_date" == "$today" ]]; then
       echo "Processing $file..."
       sed -i '/^draft:/d' "$file"
       echo "Publishing $file..."
     else
-      echo "Not time yet, Skipping $file..."
+      echo -e "\nNot time yet, Skipping $file..."
     fi
   done
 fi
