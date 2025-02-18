@@ -19,7 +19,7 @@ const { title: siteTitle, slogan, description } = siteConfig;
 					<li>
 						<a
 							href={href}
-							class="rounded-lg p-2 text-lg duration-300 ease-in-out hover:bg-secondary-900"
+							class="hover:bg-secondary-900 rounded-lg p-2 text-lg duration-300 ease-in-out"
 						>
 							{text}
 						</a>
@@ -31,10 +31,10 @@ const { title: siteTitle, slogan, description } = siteConfig;
 	{
 		title === siteTitle && (
 			<div class="grid gap-6 py-4">
-				<h1 class="text-3xl font-extrabold tracking-wide text-secondary-400">Victoria Cheng</h1>
-				<h2 class="text-xl text-secondary-300">Software Development Student at SAIT</h2>
-				<h3 class="text-xl text-secondary-200">{slogan}</h3>
-				<p class="text-lg leading-8 text-primary-100">{description}</p>
+				<h1 class="text-secondary-400 text-3xl font-extrabold tracking-wide">Victoria Cheng</h1>
+				<h2 class="text-secondary-300 text-xl">Software Development Student at SAIT</h2>
+				<h3 class="text-secondary-200 text-xl">{slogan}</h3>
+				<p class="text-primary-100 text-lg leading-8">{description}</p>
 				<SocialLinks />
 			</div>
 		)

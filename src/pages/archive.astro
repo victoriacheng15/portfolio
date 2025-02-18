@@ -21,12 +21,12 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 ---
 
 <BaseLayout title="Archive" description="A collection of my archived posts.">
-	<h1 class="mb-8 text-4xl font-bold text-secondary-300">Archive</h1>
+	<h1 class="text-secondary-300 mb-8 text-4xl font-bold">Archive</h1>
 	{
 		years.map((year) =>
 			Number(year) === currentYear ? (
 				<details open class="mb-4">
-					<summary class="mb-2 text-xl text-secondary-300">{year}</summary>
+					<summary class="text-secondary-300 mb-2 text-xl">{year}</summary>
 					<ul class="space-y-4">
 						{postsByYear[year].map((post) => (
 							<li class="flex items-baseline gap-4">
@@ -35,7 +35,7 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 								</span>
 								<a
 									href={`/blog/${post.id}`}
-									class="duration-300 ease-in-out hover:text-secondary-200"
+									class="hover:text-secondary-200 duration-300 ease-in-out"
 								>
 									{post.data.title}
 								</a>
@@ -45,7 +45,7 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 				</details>
 			) : (
 				<details class="mb-4">
-					<summary class="mb-2 text-xl text-secondary-300">{year}</summary>
+					<summary class="text-secondary-300 mb-2 text-xl">{year}</summary>
 					<ul class="space-y-4">
 						{postsByYear[year].map((post) => (
 							<li class="flex items-baseline gap-4">
@@ -54,7 +54,7 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 								</span>
 								<a
 									href={`/blog/${post.id}`}
-									class="duration-300 ease-in-out hover:text-secondary-200"
+									class="hover:text-secondary-200 duration-300 ease-in-out"
 								>
 									{post.data.title}
 								</a>

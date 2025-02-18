@@ -1,8 +1,8 @@
 ---
+import "@/styles/global.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ClientRouter, slide } from "astro:transitions";
-import { siteConfig } from "@/config";
 
 interface Props {
 	title: string;
@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<ClientRouter />
 	</head>
-	<body class="mx-auto flex min-h-screen max-w-3xl flex-col bg-primary-950 px-10 text-primary-50">
+	<body class="bg-primary-950 text-primary-50 mx-auto flex min-h-screen max-w-3xl flex-col px-10">
 		<Header title={title} transition:persist />
 		<main class="mb-auto" transition:animate={slide({ duration: ".3s" })}>
 			<slot />
