@@ -1,8 +1,17 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout";
 import BlogPreview from "@/components/BlogPreview";
 import Pagination from "@/components/Pagination";
 import { getAllSortedPosts } from "@/utils";
+
+interface Props {
+	page: {
+		data: CollectionEntry<"blog">[];
+		currentPage: number;
+		lastPage: number;
+	};
+}
 
 export async function getStaticPaths({ paginate }) {
 	const sortedPosts = await getAllSortedPosts();
