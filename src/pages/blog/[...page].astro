@@ -6,11 +6,11 @@ import Pagination from "@/components/Pagination";
 import { getAllSortedPosts } from "@/utils";
 
 interface Props {
-  page: {
-    data: CollectionEntry<"blog">[];
-    currentPage: number;
-    lastPage: number;
-  };
+	page: {
+		data: CollectionEntry<"blog">[];
+		currentPage: number;
+		lastPage: number;
+	};
 }
 
 export async function getStaticPaths({ paginate }) {
