@@ -16,8 +16,15 @@ export const PROJECTS = [
 	{
 		title: "articles-extractor",
 		description:
-			"Python app utilizing Beautiful Soup, Docker, Bash, Raspberry Pi, and cron job to automate article extraction from preferred websites and organize them into Google Sheets.",
+			"Python application automating web scraping of articles (titles, links, dates, authors) from websites. Deploy via manual runs, cron/Docker, or GitHub Actions. Organizes data into Google Sheets.",
 		link: "https://github.com/victoriacheng15/articles-extractor#readme",
-		techs: ["Python", "Google Sheet", "Docker", "Bash", "Raspberry Pi"],
+		techs: [
+			"Python",
+			"Google Sheet",
+			"Docker",
+			"Bash",
+			"Raspberry Pi",
+			"GitHub Actions",
+		],
 	},
 ];
